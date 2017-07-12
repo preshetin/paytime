@@ -18,5 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/paytime', function (Request $request) {
-    return $request->all();
+
+    $string = $request->text;
+    $username = $request->username;
+
+    return [
+        'text' => "Received text: '$string' from $username"
+    ];
 });
