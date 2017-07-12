@@ -25,6 +25,11 @@ Route::post('/paytime', function (Request $request) {
     $all = json_encode($request->all());
 
     return [
-        'text' => "Received text: '$string' from $username"
+        'text' => "Parsing string: '$string' from $username",
+        'attachments' => [
+            [
+                'image_url' => 'https://www.dropbox.com/s/t6aq46a2y1a68rw/payout-delay.png?dl=0&raw=1'
+            ]
+        ]
     ];
 });
